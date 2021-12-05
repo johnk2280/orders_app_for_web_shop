@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.timezone import now
 
 
 class Customer(models.Model):
@@ -34,7 +33,7 @@ class Order(models.Model):
         verbose_name='Заказчик',
     )
     created_at = models.DateTimeField(
-        default=now,
+        auto_now_add=True,
     )
     total_cost = models.DecimalField(
         max_digits=10,
